@@ -8,6 +8,7 @@ https://cs.unibuc.ro/~cechirita/tw/ <br>
 Materia si laboratoarele sunt foarte bine structurate, recomandam sa le parcurgeti.
 
 https://flexboxfroggy.com/ <br>
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/ <br>
 Acesta acopera toate notiunile de care ati putea avea nevoie cand folositi flexbox.
 
 https://flukeout.github.io/ <br>
