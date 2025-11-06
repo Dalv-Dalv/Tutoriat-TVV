@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,7 +67,7 @@
       }
 
       /* Show menu when checkbox checked */
-      #menu-toggle:checked + .burger + nav {
+      #menu-toggle:checked+.burger+nav {
         display: flex;
       }
 
@@ -75,74 +76,76 @@
       }
     }
 
-    .layer-apa-0{
-        position: absolute;
-        z-index: -1;
-        scale: 1.2;
+    .layer-apa-0 {
+      position: absolute;
+      z-index: -1;
+      scale: 1.2;
+      transform: translateX(-20px);
+      animation: apa 3s alternate-reverse infinite;
+      animation-delay: 1.5s;
+    }
+
+    .layer-apa-1 {
+      top: 50px;
+      position: relative;
+      z-index: 1;
+      opacity: 0.5;
+
+      transform: translateX(-20px);
+      scale: 1.2;
+      animation: apa 3s alternate-reverse infinite;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    @keyframes apa {
+      0% {
         transform: translateX(-20px);
-        animation: apa 3s alternate-reverse infinite;
-        animation-delay: 1.5s; 
+      }
+
+      50% {
+        transform: translateX(10px);
+      }
+
+      100% {
+        transform: translateX(30px);
+      }
     }
 
-    .layer-apa-1{
-        top: 50px;
-        position: relative;
-        z-index: 1;
-        opacity: 0.5;
-
-        transform: translateX(-20px);
-        scale: 1.2;
-        animation: apa 3s alternate-reverse infinite;
+    .vapor {
+      max-height: 500px;
+      left: 200px;
+      z-index: 0;
+      position: absolute;
     }
 
-    body{
-        overflow: hidden;
+    .vapor-input {
+      position: absolute;
+      z-index: 20;
     }
 
-    @keyframes apa{
-        0%{
-            transform: translateX(-20px);
-        }
-
-        50%{
-            transform: translateX(10px);
-        }
-
-        100%{
-            transform: translateX(30px);
-        }
+    #vapor_cade {
+      z-index: 20px;
     }
 
-    .vapor{
-        max-height: 500px;
-        left: 200px;
-        z-index: 0;
-        position: absolute;
+    #vapor_cade:checked~.vapor {
+      animation: vapor 3s ease-in-out;
     }
 
-    .vapor-input{
-        position: absolute;
-        z-index: 20;
-    }
+    @keyframes vapor {
+      0% {
+        transform: translateY(0px);
+      }
 
-    #vapor_cade{
-        z-index: 20px;
-    }
+      90% {
+        transform: translateY(100vh);
+      }
 
-    #vapor_cade:checked ~ .vapor{
-        animation: vapor 3s ease-in-out;
-    }
-
-    @keyframes vapor{
-        0%{
-            transform: translateY(0px);
-        }
-        90%{
-            transform: translateY(100vh);
-        }
-        100%{
-            display: none;
-        }
+      100% {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -171,4 +174,5 @@
     <img src="assets/water.png" width="100%" height="auto" class="layer-apa-1" />
   </section>
 </body>
+
 </html>
