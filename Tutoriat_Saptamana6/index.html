@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Menu</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    header {
+      background-color: red;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    h3 {
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Burger button hidden on desktop */
+    .burger {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Checkbox (hidden) */
+    #menu-toggle {
+      display: none;
+    }
+
+    /* --- MOBILE --- */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: red;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px 20px;
+        border-radius: 10px;
+      }
+
+      /* Show menu when checkbox checked */
+      #menu-toggle:checked + .burger + nav {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+    }
+
+    .layer-apa-0{
+        position: absolute;
+        z-index: -1;
+        scale: 1.2;
+        transform: translateX(-20px);
+        animation: apa 3s alternate-reverse infinite;
+        animation-delay: 1.5s; 
+    }
+
+    .layer-apa-1{
+        top: 50px;
+        position: relative;
+        z-index: 1;
+        opacity: 0.5;
+
+        transform: translateX(-20px);
+        scale: 1.2;
+        animation: apa 3s alternate-reverse infinite;
+    }
+
+    body{
+        overflow: hidden;
+    }
+
+    @keyframes apa{
+        0%{
+            transform: translateX(-20px);
+        }
+
+        50%{
+            transform: translateX(10px);
+        }
+
+        100%{
+            transform: translateX(30px);
+        }
+    }
+
+    .vapor{
+        max-height: 500px;
+        left: 200px;
+        z-index: 0;
+        position: absolute;
+    }
+
+    .vapor-input{
+        position: absolute;
+        z-index: 20;
+    }
+
+    #vapor_cade{
+        z-index: 20px;
+    }
+
+    #vapor_cade:checked ~ .vapor{
+        animation: vapor 3s ease-in-out;
+    }
+
+    @keyframes vapor{
+        0%{
+            transform: translateY(0px);
+        }
+        90%{
+            transform: translateY(100vh);
+        }
+        100%{
+            display: none;
+        }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h3>Logo</h3>
+
+    <!-- Hidden checkbox controls toggle -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="burger">☰</label>
+
+    <nav>
+      <a href="articole/caini.html">Caini</a>
+      <a href="articole/pisici.html">Pisici</a>
+      <a href="articole/balauri.html">Balauri</a>
+    </nav>
+  </header>
+
+  <section id="intro">
+    <img src="assets/water.png" width="100%" height="auto" class="layer-apa-0" />
+    <input id="vapor_cade" type="checkbox">
+    <label for="vapor_cade" class="vapor-input"></label>
+    <img src="assets/ship.png" class="vapor" />
+
+    <img src="assets/water.png" width="100%" height="auto" class="layer-apa-1" />
+  </section>
+</body>
+</html>
