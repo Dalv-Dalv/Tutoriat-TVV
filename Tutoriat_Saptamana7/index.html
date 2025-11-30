@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Menu</title>
+
+  <style>
+    #id1{
+      background: #000000A0;
+      width:200px;
+      height:200px;
+
+      backdrop-filter: blur(10px);
+
+      position:relative;
+
+      border: 2px solid #000000;
+      border-radius: 10px;
+
+      top: 0;
+
+      transition: 1s;
+
+      overflow: hidden;
+    }
+
+    #id1:hover #id2 {
+      transform:scale(1.1);
+      bottom: 0px;
+      opacity: 1;
+    }
+
+    #id2 {
+      background:red;
+
+      position:absolute;
+
+
+      width: 100px;
+      height: 100px;
+
+      right:50px;
+      bottom:0;
+
+      transition: 1s;
+      opacity: 0;
+
+      transform:translateY(100px);
+    }
+
+    body {
+      /* display:flex;
+      justify-content: center;
+      align-items: center;
+      height:100vh; */
+    }
+
+    .idk{
+      background:purple;
+      width:100px;
+      height:100px;
+    }
+
+    #div2{
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color:green;
+    }
+
+    #div3{
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color:yellow;
+    }
+
+    #cards{
+      padding: 10px;
+      position: relative;
+      display: flex;
+      gap: 10px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      
+    }
+
+    .card{
+      display: flex;
+      min-width: 200px;
+      min-height: 200px;
+      background-color: grey;
+      border-radius: 10px;
+      scroll-snap-align: start;
+    }
+
+  </style>
+</head>
+
+<body>
+  
+  <div id="cards">
+    <div class="card">
+    
+    </div>
+     
+    <div class="card">
+      
+    </div>
+      
+    <div class="card">
+      
+    </div>
+      
+    <div class="card">
+    </div>
+    
+    <div class="card">
+      
+    </div>
+      
+    <div class="card">
+      
+    </div>
+      
+  </div>
+ 
+</body>
+
+</html>

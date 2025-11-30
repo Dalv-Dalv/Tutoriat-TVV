@@ -1,0 +1,107 @@
+h1 {
+    color: black;
+
+    transition: 0.3s;
+}
+
+
+#divLista {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    width: 100px;
+}
+
+
+.cutie {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 500px;
+
+    animation-name: AnimatiaMea;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes AnimatiaMea {
+    0% {
+        transform: scale(0.3);
+    }
+
+    50% {
+        transform: scale(2.5);
+    }
+
+    100%{
+        transform: scale(0.3);
+    }
+}
+
+
+.myElem:nth-of-type(1){
+    grid-area: a;
+}
+.myElem:nth-of-type(2){
+    grid-area: b;
+}
+.myElem:nth-of-type(3){
+    grid-area: c;
+}
+
+@media (max-width: 760px) {
+    #divLista {
+        grid-template-areas:
+            "c c c"
+            "c c c"
+            "a b b";
+    }
+}
+
+h1{
+    background-color: bisque;
+    margin: 2px;
+    padding: 2px;
+}
+h1:hover {
+    color: red;
+
+    transform: scale(1.1);
+}
+
+.myElem {
+    background-color: brown;
+}
+
+
+@property --bg-x {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+:root {
+    --bg-x: 0px;
+}
+
+body {
+    background: linear-gradient(red var(--bg-x), transparent calc(var(--bg-x) + 50px));
+
+    animation: Nebunie 10s 1s infinite;
+}
+
+
+@keyframes Nebunie {
+    0% {
+        --bg-x: 0px;
+    }
+
+    50% {
+        --bg-x: 500px;
+    }
+
+    100%{
+        --bg-x: 0px;
+    }
+}
