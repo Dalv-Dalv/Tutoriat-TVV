@@ -8,7 +8,7 @@ Bun venit la Tutoriatul de Tehnici Web, pentru studenții de anul I de la **FMI 
 
 ## Important! 
 
-Uneori discutăm aspecte teoretice importante pe care nu le codăm, motiv pentru care vă invităm să veniți **fizic** la 
+Uneori discutăm aspecte teoretice importante pe care nu le codăm, motiv pentru care vă invităm să veniți **fizic** la tutoriat.
 
 Pentru a vizualiza corect fișierele HTML și pentru a face funcțional codul de **JavaScript**, trebuie să rulați un **live server**.
 
