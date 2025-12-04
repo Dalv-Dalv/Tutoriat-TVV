@@ -1,0 +1,11 @@
+body {
+    color: pink;
+    background-color: #1f1f1f;
+}
+
+#container{
+    background-color: white;
+    padding: 0px 100px;
+    border: 5px red solid;
+    border-radius: 50000000px;
+}

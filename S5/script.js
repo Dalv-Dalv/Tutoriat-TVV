@@ -1,23 +1,25 @@
 window.onload = async () => {
 
-  // Accesam continutul fisierului JSON
+  // Accesăm conținutul fișierului JSON
+  // Datele și alte detalii despre rezultatul fetch-ului sunt reținute în DATA când folosim fetch pentru API-uri
+  // În cazul lucrului cu JSON, este suficient să folosim metoda .json() ca mai jos
   const data = await fetch('/test.json');
 
-  // Retinem datele primite din fisierul JSON
+  // În result stocăm datele primite în format .json()
   const result = await data.json();
 
-  // Cream un titlu nou
+  // Creăm un titlu nou
   const titlu = document.createElement("h1");
   titlu.innerHTML = result.titlu;
 
-  // Selectam sectiunea cu id-ul "ziua_libertatii"
+  // Selectăm secțiunea cu ID-ul 'ziua_libertatii'
   const ziua_libertatii = document.getElementById("ziua_libertatii");
 
-  // Sectiune in care vrem sa bagam noul <h1>
+  // Adăugăm drept copil titlul în secțiunea selectată
   ziua_libertatii.appendChild(titlu);
 
-  // Vrem sa cream toate cele 3 paragrafe
-  // Incarcam datele cu eticheta "paragrafe"
+  // Vrem să creăm toate cele 3 paragrafe din rezultat
+  // Încărcăm doar datele de la eticheta "paragraf"
   var paragrafe_data = result.paragrafe;
 
   // Varianta I - for
@@ -28,7 +30,7 @@ window.onload = async () => {
   }
 
   // Varianta III - map
-  // Iti si modifica datele din paragrafe_data (aplica o lambda functie pe fiecare element)
+  // Modifică datele din paragrafe_data, aplicând o lambda-funcție pe fiecare element
   paragrafe_data = paragrafe_data.map(element => {
     const paragraf_nou = document.createElement("p");
     paragraf_nou.innerHTML = element;
@@ -37,7 +39,8 @@ window.onload = async () => {
   });
 
   // Varianta II - forEach
-  // Doar itereaza, nu aplica nicio functie asupra elementului
+  // Doar iterează prin fiecare element al listei
+  // Nu aduce modificări asupra elementelor listei
   paragrafe_data.forEach(element => {
     const paragraf_nou = document.createElement("p");
     paragraf_nou.innerHTML = element;
@@ -50,13 +53,14 @@ window.onload = async () => {
 
     console.log(durata, delay);
 
-    // Imi creez un nou atribut care nu e definit by default in JS
+    // Îmi creez un nou atribut / o etichetă care nu e definit în JS
     paragraf_nou.clicked = false;    
     ziua_libertatii.appendChild(paragraf_nou);
 
     paragraf_nou.onclick = () => {
-        // Daca in CSS se scrie background-color (cu liniuta si litere mici)
-        // Atributul echivalent din JS este backgroundColor (legat, cu litera mare la inceput de cuvant)
+        // Atenție la convențiile de denumire! 
+        // CSS: background-color (liniuță, litere mici)
+        // JS: backgroundColor (legat, cu majusculă la început de cuvânt începând cu al doilea)
 
         if (!paragraf_nou.clicked){
             paragraf_nou.style.backgroundColor = "green";
@@ -70,7 +74,4 @@ window.onload = async () => {
 
     }
   });
-
-
-
 };
